@@ -23,7 +23,7 @@ apt install -y screen vim git-lfs
 screen
 
 # Install common libraries
-# pip install -U requests accelerate sentencepiece pytablewriter einops protobuf huggingface_hub==0.21.4 torch torchvision
+pip install -U requests accelerate sentencepiece pytablewriter einops protobuf huggingface_hub==0.21.4
 pip install -U transformers
 pip install pip3-autoremove
 pip-autoremove torch torchvision torchaudio -y
