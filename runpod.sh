@@ -45,7 +45,7 @@ fi
 if [ "$DEBUG" == "True" ]; then
     echo "Launch Finetune in debug mode"
 fi
-
+cd /f
 python ./main.py
 
 
