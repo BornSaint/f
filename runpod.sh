@@ -25,13 +25,13 @@ screen
 # Install common libraries
 pip install -U requests accelerate sentencepiece pytablewriter einops protobuf huggingface_hub==0.21.4
 pip install -U transformers
-pip install pip3-autoremove
-pip-autoremove torch torchvision torchaudio -y
+# pip install pip3-autoremove
+# pip-autoremove torch torchvision torchaudio -y
 pip install torch torchvision torchaudio xformers --index-url https://download.pytorch.org/whl/cu121
-pip install unsloth[kaggle-new]
-pip uninstall unsloth -y && pip install git+https://github.com/unslothai/unsloth.git
-pip install git+https://github.com/unslothai/unsloth-zoo.git
-pip-autoremove unsloth unsloth-zoo -y
+# pip install unsloth[kaggle-new]
+# pip uninstall unsloth -y && pip install git+https://github.com/unslothai/unsloth.git
+# pip install git+https://github.com/unslothai/unsloth-zoo.git
+# pip-autoremove unsloth unsloth-zoo -y
 pip install unsloth
 pip install jmespath
 
