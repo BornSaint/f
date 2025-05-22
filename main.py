@@ -882,13 +882,15 @@ trainer_stats = trainer.train(resume_from_checkpoint=False)
 
 # %%
 from huggingface_hub import create_repo
+import os
 
+TOKEN = os.getenv('HUGGING_fACE_TOKEN')
 try:
-    repo_url = create_repo(repo_id="D33_mistral_7B_lora", private=True)
+    repo_url = create_repo(repo_id="D33_mistral_7B_lora", private=True, token=TOKEN)
 except:
     print('repo already exist')
 try:
-    repo_url = create_repo(repo_id="D33_mistral_7B", private=True)
+    repo_url = create_repo(repo_id="D33_mistral_7B", private=True, token=TOKEN)
 except:
     print('repo already exist')
 from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -897,8 +899,8 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 # model.save_pretrained("mistral-7B_0.3_chatml_D33_lora") # Local saving
 # model.push_to_hub('BornSaint/D33_mistral_7B_lora', token=TOKEN)
-model.push_to_hub_merged("BornSaint/D33_mistral_7B_lora", tokenizer, save_method="lora")
-model.push_to_hub_merged("BornSaint/D33_mistral_7B", tokenizer, save_method="merged_16bit")
+model.push_to_hub_merged("BornSaint/D33_mistral_7B_lora", tokenizer, save_method="lora", token=TOKEN)
+model.push_to_hub_merged("BornSaint/D33_mistral_7B", tokenizer, save_method="merged_16bit", token=TOKEN)
 # tokenizer.save_pretrained("mistral-7B_0.3_chatml_D33_lora")
 # tokenizer.push_to_hub('BornSaint/D33_mistral_7B_lora')
 
